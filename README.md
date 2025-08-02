@@ -74,7 +74,7 @@ These actions can improve job satisfaction and reduce turnover-related costs.
 ### 🔗 Technical Details
 
 View the full notebook and code:
-👉 [Salifort_Motors_Employee_Retention_Project.ipynb]((https://github.com/Mylo-sk/Salifort-Motors-Employee-Retention-Project-/blob/main/Salifort_Motors_Project.ipynb))
+👉 [Salifort_Motors_Employee_Retention_Project.ipynb](https://github.com/Mylo-sk/Salifort-Motors-Employee-Retention-Project-/blob/main/Salifort_Motors_Project.ipynb)
 
 ---
 
