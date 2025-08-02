@@ -1,69 +1,82 @@
-# Salifort-Motors-Employee-Retention-Project-
+# Salifort Motors Employee Retention Project
 
-## Working for Salifort Motors 
+## 1. Background and Overview
+
+Salifort Motors, an alternative energy vehicle manufacturer, is experiencing high employee turnover. The senior leadership team seeks to understand the causes of attrition and identify employees at risk of leaving. This project analyzes HR data to uncover key factors driving turnover and builds a predictive model using logistic regression to assist with proactive retention strategies.
+
+## 2. Data Structure Overview
+
+The dataset contains 15,000 records of employee information across the following fields:
+
+| Variable | Description |
+|----------|-------------|
+| satisfaction_level | Employee-reported job satisfaction (0–1) |
+| last_evaluation | Score of last performance review (0–1) |
+| number_project | Number of active projects |
+| average_monthly_hours | Average monthly hours worked |
+| time_spend_company | Tenure in years |
+| Work_accident | Work accident (Yes/No) |
+| promotion_last_5years | Promoted in last 5 years (Yes/No) |
+| Department | Employee department |
+| salary | Salary level (low, medium, high) |
+| left | Employee left (1 = Yes, 0 = No) |
+
+> **Note**: All categorical variables were encoded for modeling, and numerical features were scaled using `StandardScaler`.
+
+## 3. Executive Summary
+
+- **Satisfaction level** is the strongest predictor of attrition. Low satisfaction correlates directly with turnover.
+- Employees working **excessive hours** or on **many projects** show increased attrition.
+- **No recent promotions** and **longer tenure (≥ 4 years)** increase the likelihood of leaving.
+- The logistic regression model achieved an **accuracy of 77%** with good balance between **precision** and **recall**.
+
+| Metric        | Score |
+|---------------|-------|
+| Accuracy      | 0.77  |
+| Precision     | 0.71  |
+| Recall        | 0.58  |
+| F1 Score      | 0.64  |
+
+## 4. Insights Deep Dive
+
+### 1. **Satisfaction Level**
+- Employees with satisfaction < 0.5 had the highest turnover rate (over 60% left).
+- Improving job satisfaction could significantly reduce attrition.
+
+### 2. **Project Load**
+- Employees engaged in **more than 5 projects** were much more likely to leave.
+- This suggests overwork may be contributing to dissatisfaction and attrition.
+
+### 3. **Tenure and Promotion**
+- Employees with **4–6 years** at the company and **no promotions** in the past 5 years left at higher rates.
+- Promotion stagnation appears to be a turnover driver.
+
+### 4. **Work Accidents**
+- Surprisingly, employees with no recorded accidents had higher attrition, possibly due to less engagement or different role types.
+
+## 5. Recommendations
+
+- **Monitor and boost satisfaction levels**, particularly among overworked employees.
+- **Reassess project distribution** to prevent burnout.
+- **Introduce career development programs** and regular performance reviews for mid-tenure employees.
+- **Develop early warning systems** using the logistic regression model to flag at-risk staff.
+
+These actions can improve job satisfaction and reduce turnover-related costs.
+
+## 6. Caveats and Assumptions
+
+- The dataset does not include qualitative data like exit interviews or manager feedback.
+- Salary data is limited to three tiers and may not reflect full compensation dynamics.
+- The dataset is static; trends may shift over time.
+
+---
+
+### 🔗 Technical Details
+
+View the full notebook and code:
+👉 [Salifort_Motors_Employee_Retention_Project.ipynb](link-to-your-notebook-here)
+
+---
 
 
-## About the company
-Salifort Motors is a fictional French-based alternative energy vehicle manufacturer. Its global workforce of over 100,000 employees research, design, construct, validate, and distribute electric, solar, algae, and hydrogen-based vehicles. Salifort’s end-to-end vertical integration model has made it a global leader at the intersection of alternative energy and automobiles. 
 
-
-## Your business case
-As a data specialist working for Salifort Motors, you have received the results of a recent employee survey. The senior leadership team has tasked you with analyzing the data to come up with ideas for how to increase employee retention. To help with this, they would like you to design a model that predicts whether an employee will leave the company based on their  department, number of projects, average monthly hours, and any other data points you deem helpful. 
-
-
-## The value of your deliverable
-For this deliverable, you are asked to choose a method to approach this data challenge based on your prior course work. Select either a regression model or a tree-based machine learning model to predict whether an employee will leave the company.
-
-## Scenario
-Review the scenario below.
-
-
-You are a data professional working for Salifort Motors. 
-Currently, there is a high rate of turnover among Salifort employees. (Note: In this context, turnover data includes both employees who choose to quit their job and employees who are let go). Salifort’s senior leadership team is concerned about how many employees are leaving the company. Salifort strives to create a corporate culture that supports employee success and professional development. Further, the high turnover rate is costly in the financial sense. Salifort makes a big investment in recruiting, training, and upskilling its employees. 
-If Salifort could predict whether an employee will leave the company, and discover the reasons behind their departure, they could better understand the problem and develop a solution. 
-
-
-As a first step, the leadership team asks Human Resources to survey a sample of employees to learn more about what might be driving turnover.  
-
-
-Next, the leadership team asks you to analyze the survey data and come up with ideas for how to increase employee retention. To help with this, they suggest you design a model that predicts whether an employee will leave the company based on their job title, department, number of projects, average monthly hours, and any other relevant data points. A good model will help the company increase retention and job satisfaction for current employees, and save money and time training new employees. 
-
-
-As a specialist in data analysis, the leadership team leaves it up to you to choose an approach for building the most effective model to predict employee departure. For example, you could build and evaluate a statistical model such as logistic regression. Or, you could build and evaluate machine learning models such as decision tree, random forest, and XGBoost. Or, you could choose to deploy both statistical and machine learning models. 
-
-
-For any approach, you’ll need to analyze the key factors driving employee turnover, build an effective model, and share recommendations for next steps with the leadership team. 
-
-
-Data Dictionary
-
-
-
-This project uses a dataset called HR_capstone_dataset.csv. It represents 10 columns of self-reported information from employees of a multinational vehicle manufacturing corporation.
-
-
-
-
-
-
-
-
-The dataset contains:
-
-
-14,999 rows – each row is a different employee’s self-reported information
-10 columns
-
-
-Variable  |Description |
------|-----|
-satisfaction_level|Employee-reported job satisfaction level [0&ndash;1]|
-last_evaluation|Score of employee's last performance review [0&ndash;1]|
-number_project|Number of projects employee contributes to|
-average_monthly_hours|Average number of hours employee worked per month|
-time_spend_company|How long the employee has been with the company (years)
-Work_accident|Whether or not the employee experienced an accident while at work
-left|Whether or not the employee left the company
-promotion_last_5years|Whether or not the employee was promoted in the last 5 years
-Department|The employee's department
-salary|The employee's salary (U.S. dollars)
